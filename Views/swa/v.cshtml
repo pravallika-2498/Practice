@@ -1,0 +1,31 @@
+﻿@model Swa.Models.swa_model
+
+@{
+    ViewBag.Title = "v";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>LOGIN</h2>
+
+@Html.Label("User name")
+@Html.TextBoxFor(m => m.user)
+@*@Html.ValidationMessageFor(m => m.user, '', new { @class = "text-danger" })*@
+@*@{ 
+    Model.user
+}*@
+<br>
+
+<br /><label for="pass">Password</label>
+<input type="text" />
+<br>
+
+<br />
+<button type="button">Submit</button>
+
+<p><a href="@Url.Action("Index","Register")">Register</a> By clicking Register Create an account</p>
+
+
+
+
+
+

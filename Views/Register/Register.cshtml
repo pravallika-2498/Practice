@@ -1,0 +1,36 @@
+﻿@model Swa.Models.Register
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+@Html.Label("User name")
+
+@Html.EditorFor(m => m.user)
+<br />
+
+@Html.ValidationMessageFor(m => m.user, "Please enter student name.", new { @class = "text-danger" })
+<br /><label for="pass">Password</label>
+<input type="text" />
+<br>
+@Html.Label("Email  ")
+@Html.TextBoxFor(m => m.email)
+<br />
+@Html.Label("Mobile No")
+
+@Html.EditorFor(m => m.mobile)
+@Html.ValidationMessageFor(m => m.mobile, "invalid no", new { @class = "text-danger" })
+<br>
+@Html.Label("Gender")
+<br />
+@Html.Label("Male")
+<input type="radio" />
+<br />
+@Html.Label("Female")
+<input type="radio" />
+
+<br />
+<button type="button">Submit</button>
+
