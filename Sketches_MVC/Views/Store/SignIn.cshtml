@@ -1,0 +1,53 @@
+﻿@model Sketches_MVC.Models.LoginModel
+@{
+    ViewBag.Title = "SignIn";
+}
+<html>
+<form name="SignIn" action="Signin" method="post">
+    <h2>Sketches Desk</h2>
+    @*@using (@Html.BeginForm("Index", "StoreController", FormMethod.Post))*@
+    <body>
+
+        <table>
+            <tr>
+                <td>
+                    <b>  @Html.Label("User name")</b>
+                    @Html.TextBoxFor(m => m.UserName)
+                </td>
+                <td>@Html.ValidationMessageFor(m => m.UserName, "", new { @class = "error" })</td>
+            </tr>
+
+            <tr>
+                <td>
+                    <b> @Html.Label("Password")</b>
+                    @Html.TextBoxFor(m => m.Password)
+                </td>
+                <td>@Html.ValidationMessageFor(m => m.Password, "", new { @class = "error" })</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Submit" /></td>
+                <td></td>
+            </tr>
+
+        </table>
+
+        <h1>@Html.ViewData["Message"]</h1>
+</form>
+
+@*<div>
+        @Html.ActionLink("Back to List", "Login")
+    </div>*@
+<p><a href="@Url.Action("Registration","Store")">Register</a>Create an account</p>
+@*page wher to direct =Registration , controller=store*@
+
+
+
+    </body>
+</html>
+
+@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
